@@ -1,3 +1,13 @@
 .navbar {
     background-image: linear-gradient(to bottom right, #DB3445, #F71735);
 }
+
+#homeBtn {
+    text-decoration: none;
+    color: black;
+}
+
+#savedBtn {
+    text-decoration: none;
+    color: black;
+}

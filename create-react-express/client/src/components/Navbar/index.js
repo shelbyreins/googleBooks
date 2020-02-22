@@ -1,28 +1,41 @@
-import React from "react";
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
 import "./style.css";
 
-const Navbar = () => {
+const useStyles = makeStyles(theme => ({
+    root: {
+      flexGrow: 1,
+    },
+    menuButton: {
+      marginRight: theme.spacing(2),
+    },
+    title: {
+      flexGrow: 1,
+    },
+  }));
+
+  export default function ButtonAppBar() {
+    const classes = useStyles();
+  
     return (
-        <div>
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                <a className="navbar-brand" href="/">Google Books</a>
-                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-                <div className="collapse navbar-collapse" id="navbarNav">
-                    <ul className="navbar-nav">
-                        <li className="nav-item active">
-                            <a className="nav-link" href="/">Home <span className="sr-only">(current)</span></a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="/saved">Saved</a>
-                        </li>
-
-                    </ul>
-                </div>
-            </nav>
-        </div>
+      <div className={classes.root}>
+        <AppBar position="static">
+          <Toolbar>
+            {/* <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+              
+            </IconButton> */}
+            <Typography variant="h6" className={classes.title}>
+              Google Books
+            </Typography>
+            <Button color="inherit"><a src="/">Home</a></Button>
+            <Button color="inherit"><a>Saved</a></Button>
+          </Toolbar>
+        </AppBar>
+      </div>
     );
-}
-
-export default Navbar;
+  }
