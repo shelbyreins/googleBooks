@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import ButtonAppBar from "./../components/Navbar";
 import FullWidthGrid from "./../components/Jumbotron"
+import Search from "./../components/Search";
 // import Search from "./../components/Search";
 // import Card from "./../components/Card";
 
@@ -15,6 +16,8 @@ class Home extends Component {
 
             <FullWidthGrid />
 
+            
+            <Search/>
             </div>
         );
     }

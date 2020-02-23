@@ -1,7 +1,9 @@
 import React from "react";
+import Btn from "./../Btn";
 import SearchIcon from '@material-ui/icons/Search';
 import InputBase from '@material-ui/core/InputBase';
 import { fade, makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
 import "./style.css";
 
 const useStyles = makeStyles(theme => ({
@@ -48,18 +50,29 @@ const Search = () => {
     const classes = useStyles();
 
     return (
-        <div className={classes.search}>
-            <div className={classes.searchIcon}>
-                <SearchIcon />
+        <div>
+            {/* Search Bar */}
+            <div id="searchBar">
+
+                <div className={classes.search}>
+                    <div className={classes.searchIcon}>
+                        <SearchIcon />
+                    </div>
+                    <InputBase
+                        placeholder="Search…"
+                        classes={{
+                            root: classes.inputRoot,
+                            input: classes.inputInput,
+                        }}
+                        inputProps={{ 'aria-label': 'search' }}
+                    />
+                </div>
             </div>
-            <InputBase
-                placeholder="Search…"
-                classes={{
-                    root: classes.inputRoot,
-                    input: classes.inputInput,
-                }}
-                inputProps={{ 'aria-label': 'search' }}
-            />
+
+            {/* Search Button */}
+            <div id="searchBtn">
+                <Btn text="Search Books" />
+            </div>
         </div>
     );
 };

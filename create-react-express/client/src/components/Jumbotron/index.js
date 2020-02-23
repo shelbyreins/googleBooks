@@ -1,5 +1,4 @@
 import React from "react";
-import Search from "./../Search";
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
@@ -20,11 +19,12 @@ export default function FullWidthGrid() {
 
   return (
     <div className={classes.root}>
-      <Grid container spacing={3}>
-        <Grid item xs={3}>
-          <Paper className={classes.paper}> 
-          <Search />
-          </Paper>
+      <Grid container spacing={0}>
+        <Grid item md={12}>
+        <img className={classes.img} alt="complex" src="https://images.pexels.com/photos/415071/pexels-photo-415071.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
+
+          {/* <Paper className={classes.paper}> 
+          </Paper> */}
           
         </Grid>
         

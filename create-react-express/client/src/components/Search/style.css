@@ -1,0 +1,12 @@
+#searchBar {
+    display: inline-block;
+    border: 1px solid grey;
+    border-radius: 5px;
+    width: 25vw;
+    min-width: 300px;
+    margin-top: 20px;
+}
+
+#searchBtn {
+    display: inline-block;
+}
