@@ -4,16 +4,15 @@ import "./style.css";
 export function Search(props) {
     return (
         <div className="form-group" >
-            <input className="form-control" type="text" {...props} />
+            <input className="form-control" type="text" value={props.search} onChange={props.handleInputChange} />
         </div>
     )
 }
 
 export function FormBtn(props) {
     return (
-      <button {...props} className="btn btn-success">
+      <button className="btn btn-success" onClick={props.handleFormSubmit}>
         {props.children}
       </button>
     );
   }
-
