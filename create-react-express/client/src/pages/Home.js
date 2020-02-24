@@ -1,24 +1,45 @@
-import React, {Component} from "react";
-import ButtonAppBar from "./../components/Navbar";
-import FullWidthGrid from "./../components/Jumbotron"
-import Search from "./../components/Search";
-// import Search from "./../components/Search";
-// import Card from "./../components/Card";
+import React, { Component } from "react";
+import { Search, FormBtn } from "../components/Search";
+import Jumbotron from "../components/Jumbotron"
+
 
 
 class Home extends Component {
     render() {
         return (
             <div>
-            <ButtonAppBar />
+                <Jumbotron backgroundImage="./book.jpeg">
+                    <h1>Google Book Search</h1>
+                    <h2>Search for and Save Books for Interest</h2>
+                </Jumbotron >
+                <form>
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-md-8">
 
-            <br />
+                                <Search
 
-            <FullWidthGrid />
+                                    name="book"
+                                    placeholder="Search"
+                                >
+                                </Search>
+                                </div>
+                                <div className="col-md-2">
+                                    <FormBtn
+                                    >
+                                        Search
+                                </FormBtn>
+                                </div>
 
-            
-            <Search/>
+
+                            
+
+                        </div>
+                    </div>
+                </form>
+
             </div>
+
         );
     }
 }

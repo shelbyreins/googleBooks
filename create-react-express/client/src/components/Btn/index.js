@@ -1,23 +1,12 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
+import React from "react";
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    '& > *': {
-      margin: theme.spacing(1),
-    },
-  },
-}));
-
-export default function ContainedButtons(props) {
-  const classes = useStyles();
-
+// Destructuring the type, className, children and onClick props, applying them to the button element
+function Button({ type = "default", className, children, onClick }) {
   return (
-    <div className={classes.root}>
-      <Button variant="contained" color="secondary" href="/search">
-        {props.text}
-      </Button>
-    </div>
+    <button onClick={onClick} className={["btn btn-lg", `btn-${type}`, className].join(" ")}>
+      {children}
+    </button>
   );
 }
+
+export default Button;

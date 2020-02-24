@@ -1,14 +1,25 @@
-import React from "react";
+import React, { Component } from "react";
 import Home from "./pages/Home";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Jumbotron";
-// import Wrapper from "./components/Wrapper";
-import Search from "./components/Search";
-import Btn from "./components/Btn";
+import Saved from "./pages/Saved";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Navbar from "./components/Navbar"
 
-function App() {
-  return <Home />;
+
+class App extends Component {
+  render() {
+    return (
+      <Router>
+        <div>
+          <Navbar/>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/saved" component={Saved} />
+            </Switch>
+          
+        </div>
+      </Router>
+    )
+  }
 }
 
 export default App;

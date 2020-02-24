@@ -1,13 +1,11 @@
-.navbar {
-    background-image: linear-gradient(to bottom right, #DB3445, #F71735);
+.navbar{
+    background: rgba(89, 24, 17, 0.851);
+    color:white;
+    padding-top:10px;
+    padding-bottom:10px;
+   
 }
 
-#homeBtn {
-    text-decoration: none;
-    color: black;
-}
-
-#savedBtn {
-    text-decoration: none;
-    color: black;
+.navbar-brand, .nav-link, .navbar-brand:hover, .nav-link:hover{
+    color:white;
 }
