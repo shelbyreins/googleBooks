@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import API from "../utils/API";
-import { Search, FormBtn } from "../components/Search";
+import List from "./../components/List";
 import Jumbotron from "../components/Jumbotron"
+import { Search, FormBtn } from "../components/Search";
 
 
 
