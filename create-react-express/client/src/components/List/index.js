@@ -1,36 +1,35 @@
 import React from "react";
 import "./style.css";
-
-// This file exports both the List and ListItem components
-
-// export function List({ children }) {
-//   return (
-//     <div className="list-overflow-container">
-//       <ul className="list-group">{children}</ul>
-//     </div>
-//   );
-// }
-
-// export function ListItem({props}) {
-//   return <li className="list-group-item"> {children}</li>;
-// }
+import Button from "../Btn"
 
 function List(props) {
   return (
     props.books.map(book => {
       return (
-        <div>
-          <h1>Title: {book.title}</h1>
-          <h1>Authors: {book.authors}</h1>
-          <h1>Description: {book.description}</h1>
-          <img src={book.image} />
-          <button className="btn">
-            <a href={book.link} target="_blank" rel="noopener noreferrer">
-              View
-            </a>
-          </button>
-         
+
+        <div className="card">
+          <div className="card-body">
+            <div className="row">
+              <div className="col-sm-2">
+                <img src={book.image} alt="bookImg"/>
+              </div>
+              <div className="col-sm-9">
+                <h3>{book.title}</h3>
+                <p>{book.authors}</p>
+                <p>{book.description}</p>
+
+                <Button key={book.id} id={book.id} onClick={(event) => props.handleSavedButton(event)}>Save</Button>
+                <Button>
+                <a href={book.link} target="_blank" rel="noopener noreferrer">
+                View
+                   </a>
+                </Button>
+
+              </div>
+            </div>
+          </div>
         </div>
+
       );
     })
   );
