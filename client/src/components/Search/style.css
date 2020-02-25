@@ -1,0 +1,14 @@
+.form-group, .btn{
+  margin-top: 20px;
+  
+}
+
+.btn{
+  background-color: rgba(89, 24, 17, 0.851);
+  border: rgba(89, 24, 17, 0.851);
+}
+
+.btn:hover{
+  background-color: rgba(89, 24, 17, 0.851);
+  border: rgba(89, 24, 17, 0.851);
+}
