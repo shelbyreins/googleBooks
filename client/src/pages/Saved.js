@@ -3,7 +3,6 @@ import Jumbotron from "./../components/Jumbotron";
 import API from "../utils/API";
 import SaveList from "./../components/SaveList";
 
-
 class Saved extends Component {
 
     state={
@@ -17,12 +16,11 @@ class Saved extends Component {
     }
 
     // Deletes a book from the database with a given id, then reloads books from the db
-handleDeleteButton = id => {
-    API.deleteBook(id)
-      .then(res => this.componentDidMount())
-      .catch(err => console.log(err));
-  };
-
+    handleDeleteButton = id => {
+        API.deleteBook(id)
+        .then(res => this.componentDidMount())
+        .catch(err => console.log(err));
+    };
   
     render() {
         // console.log("bookData: " + )

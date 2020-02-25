@@ -5,8 +5,6 @@ import Jumbotron from "../components/Jumbotron"
 import { Search, FormBtn } from "../components/Search";
 // import Button from "../components/Btn"
 
-
-
 class Home extends Component {
     state = {
         search: "",
@@ -58,7 +56,6 @@ class Home extends Component {
             console.log("Book added: " + data);
             alert("added");
         });
-       
     }
 
     render() {
