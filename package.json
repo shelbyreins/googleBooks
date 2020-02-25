@@ -6,7 +6,7 @@
     "npm": "6.10.3",
     "node": "12.9.1"
   },
-  "main": "create-react-express/server.js",
+  "main": "server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node server.js",
