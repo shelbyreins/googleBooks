@@ -3,11 +3,9 @@ const routes = require("./routes")
 const PORT = process.env.PORT || 3001;
 const app = express();
 
-
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
 
 // Add routes, both API and view
 app.use(routes);
@@ -20,9 +18,6 @@ if (process.env.NODE_ENV === "production") {
 const mongoose = require("mongoose");
 // // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks", {useUnifiedTopology: true, useNewUrlParser: true});
-
-// const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/googlebooks";
-// mongoose.connect(MONGODB_URI, { useUnifiedTopology: true, useNewUrlParser: true, useFindAndModify: false });
 
 app.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
