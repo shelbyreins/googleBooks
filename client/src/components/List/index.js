@@ -10,10 +10,10 @@ function List(props) {
         <div className="card">
           <div className="card-body">
             <div className="row">
-              <div className="col-sm-2">
+              <div className="col-lg-2 col-sm-7 col-xs-2">
                 <img src={book.image} alt="bookImg"/>
               </div>
-              <div className="col-sm-9">
+              <div className="col-lg-7 col-sm-11 col-xs-9">
                 <h3>{book.title}</h3>
                 <p>{book.authors}</p>
                 <p>{book.description}</p>
