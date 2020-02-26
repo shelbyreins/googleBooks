@@ -15,7 +15,6 @@ class Saved extends Component {
         .catch(err => console.log(err))
     }
 
-    // Deletes a book from the database with a given id, then reloads books from the db
     handleDeleteButton = id => {
         API.deleteBook(id)
         .then(res => this.componentDidMount())
@@ -23,7 +22,6 @@ class Saved extends Component {
     };
   
     render() {
-        // console.log("bookData: " + )
         return (
             <div>
                 
@@ -35,14 +33,10 @@ class Saved extends Component {
            <br/>
                 <div className="container">
                 <SaveList bookData={this.state.bookData} handleDeleteButton={this.handleDeleteButton}/>
-
                 </div>
-            
             </div>
         );
     }
 }
 
 export default Saved;
-
-

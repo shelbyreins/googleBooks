@@ -18,7 +18,6 @@ function SaveList(props) {
                 <p>{bookData.authors}</p>
                 <p>{bookData.description}</p>
 
-
                 <Button className="deleteBtn" key={bookData.id} id={bookData._id} onClick={(event) => props.handleDeleteButton(bookData._id)}>Delete</Button>
                 
                 <Button >

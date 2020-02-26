@@ -27,7 +27,6 @@
 #searchBtn:focus{
   outline:none !important;
   box-shadow: none !important;
- 
 }
 
 #searchBtn:active{
@@ -39,5 +38,4 @@
     width: 90%;
     display:inline-block;
   }
-  
 }

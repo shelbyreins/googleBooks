@@ -3,7 +3,6 @@ import API from "../utils/API";
 import List from "./../components/List";
 import Jumbotron from "../components/Jumbotron"
 import Form from "../components/Search";
-// import Button from "../components/Btn"
 
 class Home extends Component {
     state = {
@@ -17,7 +16,6 @@ class Home extends Component {
 
     handleFormSubmit = event => {
         event.preventDefault();
-        // console.log("state.search: " + this.state.search);
         API.searchBooks(String(this.state.search))
             .then(res => {
                 if (res.data.status === "error") {
@@ -35,12 +33,9 @@ class Home extends Component {
                             image: result.volumeInfo.imageLinks.thumbnail,
                             link: result.volumeInfo.infoLink,
                         }
-                        console.log("result: " + JSON.stringify(result));
                         return result;
                     })
                     this.setState({ books: results });
-                    // console.log("state.books: " + JSON.stringify(this.state.books));
-
                 }
             })
             .catch(err => this.setState({ error: err.message }));
@@ -52,9 +47,7 @@ class Home extends Component {
         bookData = bookData[0];
         API.saveBook(bookData)
             .then(function (data) {
-                //call route to save book
-                console.log("Book added: " + data);
-                alert("added");
+                alert("Your book has been saved!");
             });
     }
 
@@ -71,15 +64,11 @@ class Home extends Component {
                     handleInputChange={this.handleInputChange}
                     >
                     </Form>
-
                     <br/>
-
                     <List books={this.state.books} handleSavedButton={this.handleSavedButton}>
                     </List>
 
-
                 </div>
-
 
             </div>
 
