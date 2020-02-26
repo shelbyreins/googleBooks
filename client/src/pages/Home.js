@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import API from "../utils/API";
 import List from "./../components/List";
 import Jumbotron from "../components/Jumbotron"
-import { Search, FormBtn } from "../components/Search";
+import Form from "../components/Search";
 // import Button from "../components/Btn"
 
 class Home extends Component {
@@ -66,26 +66,13 @@ class Home extends Component {
                     <h2>Search for and Save Books for Interest</h2>
                 </Jumbotron >
                 <div className="container">
-                    <form>
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-md-10">
+                    <Form
+                    handleFormSubmit={this.handleFormSubmit}
+                    handleInputChange={this.handleInputChange}
+                    >
+                    </Form>
 
-                                <Search
-                                    name="book"
-                                    placeholder="Search"
-                                    handleInputChange={this.handleInputChange}
-                                >
-                                </Search>
-                            </div>
-                            <div className="col-md-1">
-                                <FormBtn handleFormSubmit={this.handleFormSubmit}>
-                                    Search
-                                </FormBtn>
-                            </div>
-                        </div>
-                        </div>
-                    </form>
+                    <br/>
 
                     <List books={this.state.books} handleSavedButton={this.handleSavedButton}>
                     </List>

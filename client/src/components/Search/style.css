@@ -1,11 +1,22 @@
-.form-group, #searchBtn{
+#search{
+  width: 50%;
   margin-top: 20px;
+}
+
+#search:focus, #search:active{
+    box-shadow: none !important; 
+}
+
+#searchForm{
+  display:block;
   text-align: center;
+  padding-bottom: 20px;
 }
 
 #searchBtn{
   background-color: rgba(89, 24, 17, 0.851);
   border: rgba(89, 24, 17, 0.851);
+  margin-top: 20px;
 }
 
 #searchBtn:hover{
@@ -21,4 +32,12 @@
 
 #searchBtn:active{
   background-color: rgba(89, 24, 17, 0.591);
+}
+
+@media only screen and (max-width: 600px) {
+  #search {
+    width: 90%;
+    display:inline-block;
+  }
+  
 }

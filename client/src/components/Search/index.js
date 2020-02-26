@@ -1,18 +1,26 @@
 import React from "react";
 import "./style.css";
 
-export function Search(props) {
-    return (
-        <div className="form-group" >
-            <input className="form-control" type="text" value={props.search} onChange={props.handleInputChange} />
-        </div>
-    )
+function Form(props) {
+  return (
+    <form >
+      <div className="form-inline" id="searchForm">
+        <input className="form-control mr-sm-2"
+          id="search"
+          type="text"
+          name="search"
+          placeholder="Book Search"
+          value={props.search}
+          onChange={props.handleInputChange} />
+        <button className="btn btn-success "
+          id="searchBtn"
+          type="submit"
+          onClick={props.handleFormSubmit}>
+           Search
+        </button>
+      </div>
+    </form>
+  )
 }
 
-export function FormBtn(props) {
-    return (
-      <button className="btn btn-success" id="searchBtn" onClick={props.handleFormSubmit}>
-        {props.children}
-      </button>
-    );
-  }
+export default Form

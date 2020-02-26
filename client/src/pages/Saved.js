@@ -29,7 +29,7 @@ class Saved extends Component {
                 
                 <Jumbotron backgroundImage="./book.jpeg">
                     <h1>Google Book Search</h1>
-                    <h2>Search for and Save Books for Interest</h2>
+                    <h2>Saved Books</h2>
                 </Jumbotron >
 
            <br/>
