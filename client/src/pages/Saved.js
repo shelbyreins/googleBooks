@@ -32,7 +32,12 @@ class Saved extends Component {
                     <h2>Search for and Save Books for Interest</h2>
                 </Jumbotron >
 
+           <br/>
+                <div className="container">
                 <SaveList bookData={this.state.bookData} handleDeleteButton={this.handleDeleteButton}/>
+
+                </div>
+            
             </div>
         );
     }

@@ -1,5 +1,5 @@
 import React from "react";
-// import "./style.css";
+import "./style.css";
 import Button from "../Btn"
 
 function List(props) {
@@ -18,9 +18,9 @@ function List(props) {
                 <p>{book.authors}</p>
                 <p>{book.description}</p>
 
-                <Button key={book.id} id={book.id} onClick={(event) => props.handleSavedButton(event)}>Save</Button>
+                <Button className="saveBtn" key={book.id} id={book.id} onClick={(event) => props.handleSavedButton(event)}>Save</Button>
                 <Button>
-                <a href={book.link} target="_blank" rel="noopener noreferrer">
+                <a className="viewBtn" href={book.link} target="_blank" rel="noopener noreferrer">
                 View
                    </a>
                 </Button>

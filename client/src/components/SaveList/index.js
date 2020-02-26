@@ -1,5 +1,5 @@
 import React from "react";
-// import "./style.css";
+import "./style.css";
 import Button from "../Btn"
 
 function SaveList(props) {
@@ -19,10 +19,10 @@ function SaveList(props) {
                 <p>{bookData.description}</p>
 
 
-                <Button key={bookData.id} id={bookData._id} onClick={(event) => props.handleDeleteButton(bookData._id)}>Delete</Button>
+                <Button className="deleteBtn" key={bookData.id} id={bookData._id} onClick={(event) => props.handleDeleteButton(bookData._id)}>Delete</Button>
                 
-                <Button>
-                <a href={bookData.link} target="_blank" rel="noopener noreferrer">
+                <Button >
+                <a className="viewBtn" href={bookData.link} target="_blank" rel="noopener noreferrer">
                 View
                    </a>
                 </Button>

@@ -13,49 +13,49 @@ class Home extends Component {
 
     handleInputChange = event => {
         this.setState({ search: event.target.value });
-      };
+    };
 
     handleFormSubmit = event => {
         event.preventDefault();
         // console.log("state.search: " + this.state.search);
         API.searchBooks(String(this.state.search))
-          .then(res => {
-            if (res.data.status === "error") {
-              throw new Error(res.data.message);
-            }
-            else{
-                let results = res.data.items
-                results = results.map(result => {
-                    result= {
-                        key:result.key,
-                        id:result.id,
-                        title:result.volumeInfo.title,
-                        authors:result.volumeInfo.authors,
-                        description:result.volumeInfo.description,
-                        image:result.volumeInfo.imageLinks.thumbnail,
-                        link:result.volumeInfo.infoLink,
-                    }
-                    console.log("result: " + JSON.stringify(result));
-                    return result;
-                })
-                this.setState({books: results});
-                // console.log("state.books: " + JSON.stringify(this.state.books));
-    
-            }
-      })
-          .catch(err => this.setState({ error: err.message }));
-      };
-  
-    handleSavedButton = event =>{
+            .then(res => {
+                if (res.data.status === "error") {
+                    throw new Error(res.data.message);
+                }
+                else {
+                    let results = res.data.items
+                    results = results.map(result => {
+                        result = {
+                            key: result.key,
+                            id: result.id,
+                            title: result.volumeInfo.title,
+                            authors: result.volumeInfo.authors,
+                            description: result.volumeInfo.description,
+                            image: result.volumeInfo.imageLinks.thumbnail,
+                            link: result.volumeInfo.infoLink,
+                        }
+                        console.log("result: " + JSON.stringify(result));
+                        return result;
+                    })
+                    this.setState({ books: results });
+                    // console.log("state.books: " + JSON.stringify(this.state.books));
+
+                }
+            })
+            .catch(err => this.setState({ error: err.message }));
+    };
+
+    handleSavedButton = event => {
         event.preventDefault();
         let bookData = this.state.books.filter(book => book.id === event.target.id);
         bookData = bookData[0];
         API.saveBook(bookData)
-        .then(function(data) {
-            //call route to save book
-            console.log("Book added: " + data);
-            alert("added");
-        });
+            .then(function (data) {
+                //call route to save book
+                console.log("Book added: " + data);
+                alert("added");
+            });
     }
 
     render() {
@@ -65,10 +65,11 @@ class Home extends Component {
                     <h1>Google Book Search</h1>
                     <h2>Search for and Save Books for Interest</h2>
                 </Jumbotron >
-                <form>
+                <div className="container">
+                    <form>
                     <div className="container">
                         <div className="row">
-                            <div className="col-md-8">
+                            <div className="col-md-10">
 
                                 <Search
                                     name="book"
@@ -77,20 +78,21 @@ class Home extends Component {
                                 >
                                 </Search>
                             </div>
-                            <div className="col-md-2">
+                            <div className="col-md-1">
                                 <FormBtn handleFormSubmit={this.handleFormSubmit}>
                                     Search
                                 </FormBtn>
                             </div>
-
                         </div>
-                       
-                            <List books={this.state.books} handleSavedButton={this.handleSavedButton}>
-                            </List>
-                        
-                        
-                    </div>
-                </form>
+                        </div>
+                    </form>
+
+                    <List books={this.state.books} handleSavedButton={this.handleSavedButton}>
+                    </List>
+
+
+                </div>
+
 
             </div>
 

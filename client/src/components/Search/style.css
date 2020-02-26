@@ -1,14 +1,24 @@
-.form-group, .btn{
+.form-group, #searchBtn{
   margin-top: 20px;
-  
+  text-align: center;
 }
 
-.btn{
+#searchBtn{
   background-color: rgba(89, 24, 17, 0.851);
   border: rgba(89, 24, 17, 0.851);
 }
 
-.btn:hover{
-  background-color: rgba(89, 24, 17, 0.851);
+#searchBtn:hover{
+  background-color: rgba(89, 24, 17, 0.591);
   border: rgba(89, 24, 17, 0.851);
+}
+
+#searchBtn:focus{
+  outline:none !important;
+  box-shadow: none !important;
+ 
+}
+
+#searchBtn:active{
+  background-color: rgba(89, 24, 17, 0.591);
 }

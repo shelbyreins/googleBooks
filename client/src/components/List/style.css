@@ -1,0 +1,21 @@
+.viewBtn{
+    color: black;
+    font-weight: 100;
+}
+
+.viewBtn:hover{
+    color: rgba(89, 24, 17, 0.851);
+
+}
+
+.saveBtn{
+    background-color: rgba(89, 24, 17, 0.851);
+    color: white;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.saveBtn:hover, .saveBtn:active{
+    background-color: rgba(89, 24, 17, 0.591);
+   
+}

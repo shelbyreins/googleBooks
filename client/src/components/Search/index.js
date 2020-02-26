@@ -11,7 +11,7 @@ export function Search(props) {
 
 export function FormBtn(props) {
     return (
-      <button className="btn btn-success" onClick={props.handleFormSubmit}>
+      <button className="btn btn-success" id="searchBtn" onClick={props.handleFormSubmit}>
         {props.children}
       </button>
     );
