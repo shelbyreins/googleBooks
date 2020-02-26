@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import API from "../utils/API";
 import List from "./../components/List";
-import Jumbotron from "../components/Jumbotron"
+import Hero from "../components/Hero"
 import Form from "../components/Search";
 
 class Home extends Component {
@@ -54,10 +54,10 @@ class Home extends Component {
     render() {
         return (
             <div>
-                <Jumbotron backgroundImage="./book.jpeg">
+                <Hero backgroundImage="./book.jpeg">
                     <h1>Google Book Search</h1>
                     <h2>Search for and Save Books for Interest</h2>
-                </Jumbotron >
+                </Hero >
                 <div className="container">
                     <Form
                     handleFormSubmit={this.handleFormSubmit}

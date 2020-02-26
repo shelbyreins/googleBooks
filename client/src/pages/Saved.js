@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import Jumbotron from "./../components/Jumbotron";
+import Hero from "./../components/Hero";
 import API from "../utils/API";
 import SaveList from "./../components/SaveList";
 
@@ -25,10 +25,10 @@ class Saved extends Component {
         return (
             <div>
                 
-                <Jumbotron backgroundImage="./book.jpeg">
+                <Hero backgroundImage="./book.jpeg">
                     <h1>Google Book Search</h1>
                     <h2>Saved Books</h2>
-                </Jumbotron >
+                </Hero >
 
            <br/>
                 <div className="container">
