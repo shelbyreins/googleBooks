@@ -33,6 +33,7 @@ class Home extends Component {
                             image: result.volumeInfo.imageLinks.thumbnail,
                             link: result.volumeInfo.infoLink,
                         }
+                        console.log(results)
                         return result;
                     })
                     this.setState({ books: results });
