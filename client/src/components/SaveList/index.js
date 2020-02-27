@@ -10,10 +10,10 @@ function SaveList(props) {
         <div className="card">
           <div className="card-body">
             <div className="row">
-              <div className=" col-lg-2  col-sm-7 col-xs-2">
+              <div className=" col-lg-2 col-sm-7 col-xs-2">
                 <img src={bookData.image} alt="bookImg"/>
               </div>
-              <div className="col-lg-7  col-sm-11 col-xs-9">
+              <div className="col-lg-7 col-sm-11 col-xs-9">
                 <h3>{bookData.title}</h3>
                 <p>{bookData.authors}</p>
                 <p>{bookData.description}</p>
