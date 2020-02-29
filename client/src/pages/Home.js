@@ -7,7 +7,8 @@ import Form from "../components/Search";
 class Home extends Component {
     state = {
         search: "",
-        books: []
+        books: [],
+        error: ""
     };
 
     handleInputChange = event => {
@@ -25,15 +26,14 @@ class Home extends Component {
                     let results = res.data.items
                     results = results.map(result => {
                         result = {
-                            key: result.key,
+                            key: result.id,
                             id: result.id,
                             title: result.volumeInfo.title,
                             authors: result.volumeInfo.authors,
                             description: result.volumeInfo.description,
-                            image: result.volumeInfo.imageLinks.thumbnail,
+                            image: result.volumeInfo.imageLinks,
                             link: result.volumeInfo.infoLink,
                         }
-                        console.log(results)
                         return result;
                     })
                     this.setState({ books: results });
