@@ -8,7 +8,6 @@ class Home extends Component {
     state = {
         search: "",
         books: [],
-        error: ""
     };
 
     handleInputChange = event => {
@@ -31,7 +30,7 @@ class Home extends Component {
                             title: result.volumeInfo.title,
                             authors: result.volumeInfo.authors,
                             description: result.volumeInfo.description,
-                            image: result.volumeInfo.imageLinks,
+                            image: result.volumeInfo.imageLinks.thumbnail,
                             link: result.volumeInfo.infoLink,
                         }
                         return result;

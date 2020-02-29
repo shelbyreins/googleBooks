@@ -11,8 +11,8 @@ function List(props) {
           <div className="card-body">
             <div className="row">
               <div className="col-lg-2 col-sm-7 col-xs-2">
-              <img src= {book.image === undefined
-              ? "" : `${book.image.thumbnail}`}/>
+              <img alt = "imageThumb" src= {book.image === undefined
+              ? "" : `${book.image}`}/>
               </div>
               <div className="col-lg-7 col-sm-11 col-xs-9">
                 <h3>{book.title}</h3>
