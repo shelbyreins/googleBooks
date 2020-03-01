@@ -18,19 +18,26 @@ class Home extends Component {
         event.preventDefault();
         API.searchBooks(String(this.state.search))
             .then(res => {
-                if (res.data.status === "error") {
-                    throw new Error(res.data.message);
+                if (res.data.status === "error") {              
+                    let result = [{
+                        id: "",
+                        title: "",
+                        authors: [],
+                        description: "",
+                        image: "",
+                        link: "",
+                    }]
+                    this.setState({books: result})
                 }
                 else {
                     let results = res.data.items
                     results = results.map(result => {
                         result = {
-                            key: result.id,
                             id: result.id,
                             title: result.volumeInfo.title,
                             authors: result.volumeInfo.authors,
-                            description: result.volumeInfo.description,
-                            image: result.volumeInfo.imageLinks.thumbnail,
+                            description: result.volumeInfo.description === undefined ? "No description" : result.volumeInfo.description,
+                            image: result.volumeInfo.imageLinks === undefined ? "/NoPhotoAvailable.jpg" : result.volumeInfo.imageLinks.thumbnail,
                             link: result.volumeInfo.infoLink,
                         }
                         return result;
@@ -38,8 +45,8 @@ class Home extends Component {
                     this.setState({ books: results });
                 }
             })
-            .catch(err => this.setState({ error: err.message }));
-    };
+            .catch(err => console.log(err));    
+        };
 
     handleSavedButton = event => {
         event.preventDefault();

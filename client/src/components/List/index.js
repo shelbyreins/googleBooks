@@ -11,15 +11,15 @@ function List(props) {
           <div className="card-body">
             <div className="row">
               <div className="col-lg-2 col-sm-7 col-xs-2">
-              <img alt = "imageThumb" src= {book.image === undefined
-              ? "" : `${book.image}`}/>
+              <img src={book.image} style= {{width:"100%"}} alt="bookImg"/>
               </div>
               <div className="col-lg-7 col-sm-11 col-xs-9">
                 <h3>{book.title}</h3>
                 <p>{book.authors}</p>
-                <p>{book.description ? book.description: "No description"}</p>
+                <p>{book.description.substring(0,200)}... 
+                </p>
 
-                <Button className="saveBtn" key={book.id} id={book.id} onClick={(event) => props.handleSavedButton(event)}>Save</Button>
+                <Button className="saveBtn"  id={book.id} onClick={(event) => props.handleSavedButton(event)}>Save</Button>
                 <Button>
                 <a className="viewBtn" href={book.link} target="_blank" rel="noopener noreferrer">
                 View
